@@ -2,7 +2,7 @@
 
 This repository contains a MATLAB project aimed at comparing two different digital watermarking techniques applied to images, evaluating their robustness and detectability through Machine Learning models.
 
-## 1 📋 Project Description
+## 📋 Project Description
 
 The project implements and compares two watermark insertion strategies:
 1. **SVD (Singular Value Decomposition) Approach on Luminance**: Uses an object detector (YOLOv8) to identify a Region of Interest (ROI). The watermark is embedded by altering the singular values (SVD) of the luminance channel (Y) exclusively within the ROI.
@@ -13,14 +13,14 @@ To evaluate the presence of the watermark and test its robustness (even in the p
 * **Support Vector Machine (SVM)** (with an RBF kernel and hyperparameter tuning)
 * **Random Forest** (with hyperparameter tuning)
 
-## 2 📊 Dataset
+## 📊 Dataset
 
 The project utilizes a dataset consisting of **652 images** in JPEG format depicting cars viewed from the rear. The dataset combines two collections characterized by heterogeneous real-world contexts (from Caltech parking lots to Southern California highways) and varying resolutions:
 
 * **Caltech Cars 1999**: 896 x 592 ([Dataset 1 Details](https://data.caltech.edu/records/fmbpr-ezq86))
 * **Caltech Cars 2001**: 360 x 240 ([Dataset 2 Details](https://data.caltech.edu/records/dvx6b-vsc46))
 
-## 3 🔍 Feature Extraction Process
+## 🔍 Feature Extraction Process
 
 To bridge the gap between image processing and Machine Learning, a robust set of **20 statistical and structural features** is extracted by comparing the original image with its watermarked (and noisy) counterpart via `computeWatermarkScore.m`:
 
@@ -30,7 +30,7 @@ To bridge the gap between image processing and Machine Learning, a robust set of
 * **Linear Correlation Metric:** Grayscale Correlation Coefficient (Pearson) between the two images.
 * **Local ROI Features (SVD-specific):** SSIM, PSNR, mean absolute error, and standard deviation computed strictly within the YOLOv8-detected Bounding Box (Region of Interest).
 
-## 4 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 .
@@ -58,29 +58,29 @@ To bridge the gap between image processing and Machine Learning, a robust set of
 └── README.md                            # This file, providing project documentation.
 ```
 
-## 5 🚀 Installation and Usage
+## 🚀 Installation and Usage
 
-### 5.1 Cloning the Repository
+### Cloning the Repository
 To get started, clone this project to your local environment:
 ```bash
 git clone https://github.com/Michelemata/DigitalWatermarking.git
 cd DigitalWatermarking
 ```
 
-### 5.2 Prerequisites
+### Prerequisites
 To run the code properly, you must have **MATLAB** installed (a recent version supporting YOLOv8 is recommended) along with the following official Toolboxes:
 * **Deep Learning Toolbox**
 * **Image Processing Toolbox**
 * **Statistics and Machine Learning Toolbox**
 * **Computer Vision Toolbox**
 
-### 5.3 Running the Analysis
+### Running the Analysis
 * **Single Run**:
   Open `modelli_ml.m` in MATLAB. Ensure that the `sweepMode` parameter is set to `false`. Click **Run**. The script will generate the output folders with the modified images, extract the features, train the models and evaluates them.
 * **Parametric Sweep Run**:
   Run the `runSweepAlphaIdx.m` file directly. This will automatically test various visibility levels (alpha) and contamination percentages (idx), aggregating the results into a tabular log.
 
-## 6 📈 Generated Outputs
+## 📈 Generated Outputs
 
 Running the scripts will generate several folders, including:
 * **`dataset_A_...`** / **`dataset_B_...`**: Folders containing the physically modified images.
@@ -89,7 +89,7 @@ Running the scripts will generate several folders, including:
   * Confusion matrices, ROC curves, Feature Importance charts, and distribution Boxplots saved as `.png`.
   * Visual "heatmap" representations of the differences between the original and processed images.
 
-## 7 📉 Evaluation
+## 📉 Evaluation
 
 To evaluate and compare the performance of the three classification models (Logistic Regression, Support Vector Machine, and Random Forest), the following metrics were calculated:
 * **Accuracy** (Global accuracy of the model)
@@ -101,10 +101,10 @@ To evaluate and compare the performance of the three classification models (Logi
 
 The results are printed to the console.
 
-## 8 🎓 Acknowledgements
+## 🎓 Acknowledgements
 
 This project was carried out as part of the **Mathematical and Statistical Methods for Artificial Intelligence** course taught by Professor **Marina Popolizio** at the Politecnico di Bari. The project was developed in collaboration with **Colavitto Valeria**.
 
-## 9 📄 License
+## 📄 License
 
 This project is released under the MIT License. See the LICENSE file for more details.
