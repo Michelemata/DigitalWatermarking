@@ -107,4 +107,4 @@ This project was carried out as part of the **Mathematical and Statistical Metho
 
 ## 📄 License
 
-This project is released under the MIT License. See the LICENSE file for more details.
+This project is released under the MIT License. See the `LICENSE` file for more details.
