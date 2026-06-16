@@ -60,21 +60,21 @@ To bridge the gap between image processing and Machine Learning, a robust set of
 
 ## 🚀 Installation and Usage
 
-### Cloning the Repository
+### 1\. Clone the Repository
 To get started, clone this project to your local environment:
 ```bash
 git clone https://github.com/Michelemata/DigitalWatermarking.git
 cd DigitalWatermarking
 ```
 
-### Prerequisites
+### 2\. Prerequisites
 To run the code properly, you must have **MATLAB** installed (a recent version supporting YOLOv8 is recommended) along with the following official Toolboxes:
 * **Deep Learning Toolbox**
 * **Image Processing Toolbox**
 * **Statistics and Machine Learning Toolbox**
 * **Computer Vision Toolbox**
 
-### Running the Analysis
+### 3\. Running the Analysis
 * **Single Run**:
   Open `modelli_ml.m` in MATLAB. Ensure that the `sweepMode` parameter is set to `false`. Click **Run**. The script will generate the output folders with the modified images, extract the features, train the models and evaluates them.
 * **Parametric Sweep Run**:
